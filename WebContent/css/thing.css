@@ -1,0 +1,53 @@
+@CHARSET "UTF-8";
+/*方格样式
+  图片宽度 308px*288px;
+*/
+.whole{
+	//position:absolute;
+	width:100%;
+	height:100%;
+	margin-left:7px;
+	margin-top:10px;
+	padding-bottom:100px;
+}
+.show-square{
+	width: 308px;
+	height: 346px;	
+	border-radius: 5px;
+	margin-left: 13px;
+	margin-right: 13px;
+	margin-top: 17px;
+	margin-bottom: 17px;
+	border: 2px solid #DEDEDE;
+	float:left;
+}
+.show-square img{
+	width:300px;
+	height:300px;
+}
+.show-square:hover{
+	transform:scale(1.02);-webkit -transform:scale(1.02);
+	transition:width 0.7s heigth ,transform 0.7s
+}
+/*三个小图标	*/
+.small-icon{
+	width: 171px;
+	height: 47px;
+	margin: 0;
+	padding: 15px;  /*图标与div边框的距离*/
+}
+/*点赞,评论图片的大小*/
+.small-icon img{
+	width: 18px;
+	height: 18px;
+}
+
+/*点赞,评论数的格式*/
+.small-icon font{
+    font-size: 14px;
+    line-height: 18px;
+	font-family: 微软雅黑;
+    color: #333;
+    padding: 0;
+
+}
