@@ -40,13 +40,6 @@ public class LoginActionServlet  extends Action{
 					loginflag = true;
 				}
 			}
-//			conn = DriverManager.getConnection(url,username,pwd);
-//			Statement stmt=conn.createStatement();
-//			String sql = "select * from MYUSER";
-//			ResultSet rs = stmt.executeQuery(sql);
-//			while(rs.next()){
-//				System.out.println(rs.getString(1)+rs.getString(2));
-//			}
 		} catch (Exception sqlexl) {
 			// TODO: handle exception
 			sqlexl.printStackTrace();

@@ -16,7 +16,7 @@
 			<img src="../img/like.png" id="like1"/><font id="num1">2304</font>      
 			<img src="../img/comment.png"/><font>3</font>
 			<img src="../img/share.png" /><font>453</font>
-			<a href="${pageContext.request.contextPath }/BuyServlet">加入购物车</a>
+			<a href="${pageContext.request.contextPath }/BuyServlet?goodsid=001">加入购物车</a>
 		 </div>
 		
 	</div>	

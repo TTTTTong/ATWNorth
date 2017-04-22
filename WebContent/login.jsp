@@ -29,7 +29,7 @@ padding:0px;
 }
   
 body{
-background:url(image/login1.png);
+background:url(img/login1.png);
 background-repeat:no-repeat;
 position:relative;
 padding:150px;
