@@ -26,7 +26,6 @@ public class LoginActionServlet  extends Action{
 		String pwd="tiger";
 		Connection conn = null;
 		
-		//database
 		try {
 			conn = DriverManager.getConnection(url,username,pwd);
 			Statement stmt=conn.createStatement();

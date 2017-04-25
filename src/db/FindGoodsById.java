@@ -1,8 +1,7 @@
 package db;
 
-import java.sql.Statement;
-
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -10,14 +9,15 @@ public class FindGoodsById {
 	public  String FindGoodsById(String id) throws SQLException{
 		Connection conn = DBUtils.getConnection();
 
-		String goods = "";
+		String goods = "b";
 		try {
-			Statement stmt = conn.createStatement();
-			String sql = "select goods from goods where goodsid='id'";
-			ResultSet rs = stmt.executeQuery(sql);
+			String sql = "select goodsname from GOODS where GOODSID=?";
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.setString(1, id);
+			ResultSet rs = stmt.executeQuery();
 			
-			if (rs.next()) {
-				goods = rs.getString(0);
+			while(rs.next()) {
+				goods = rs.getString(1);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

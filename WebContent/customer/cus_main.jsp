@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Store</title>
 <script src="js/jquery.mobile-1.3.2.min.js"></script>
 <script src="js/jquery-3.2.0.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
