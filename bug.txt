@@ -1,0 +1,26 @@
+1.注册时两个密码不一样也能通过；
+
+//2，3通过重定向完成，不使用forward
+2.注册完不跳转；
+3.外部浏览器登陆完后cus_main页面不能读取customer文件夹下的jsp文件；
+
+4.main页面的图标；
+5.hibernate不执行；
+6.主页右侧有两个滚动条；
+7.注册时检查手机号长度；
+8.把之前的sql语句改为DBUtil；
+9.注册时检查用户名是否存在（AJAX）；
+10.forward跳转问题 （null）；
+12.更改css浮动效果，login，store；
+13.优化orderid；
+14.添加搜索；
+15.logout；
+
+
+
+
+
+
+1.缺失表达式；
+2.action多用${pageContext.request.contextPath }；
+3.sql查询语句后面不是数值是参数 没有结果（改成prestmt）；
