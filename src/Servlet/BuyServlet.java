@@ -29,7 +29,6 @@ public class BuyServlet extends HttpServlet {
 			
 			//如果该商品不在购物车，加入购物车
 			if(isExist == false){
-				System.out.println("bucunzai");
 				int count =1;
 				String orderid = goodsid + String.valueOf(count);
 				String sql = "insert into shopcar values(?,?,?,?,?)";
@@ -56,7 +55,6 @@ public class BuyServlet extends HttpServlet {
 		}finally {
 		//	conn.close();
 		}
-		
 		
 		System.out.println("buyaction");
 		response.getWriter().append("Served at: ").append(request.getContextPath());
