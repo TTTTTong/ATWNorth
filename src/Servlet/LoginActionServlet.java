@@ -47,7 +47,7 @@ public class LoginActionServlet  extends Action{
 			conn.close();
 		}
 	
-	//处理转发
+	//处理转发  
 	if(loginflag){
 		session.setAttribute("username", loginActionForm.getUsername());
 		try {

@@ -5,13 +5,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import Util.DBUtils;
+
 public class IsGoodsExist {
-	public boolean isGoodsExist(String id) throws SQLException {
+	
+	//判断是否存在时要同时判断用户名和goodsid；
+	public boolean isGoodsExist(String id,String username) throws SQLException {
 		Connection conn = DBUtils.getConnection();
 		
-			String sql = "select goods from shopcar where goodsid=?";
+			String sql = "select goods from shopcar where goodsid=? and username=?";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, id);
+			stmt.setString(2, username);
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
 				return true;

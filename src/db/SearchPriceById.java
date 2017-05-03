@@ -7,27 +7,25 @@ import java.sql.SQLException;
 
 import Util.DBUtils;
 
-public class FindGoodsById {
-	public  String FindGoodsById(String id) throws SQLException{
+public class SearchPriceById {
+	public int SearchPriceByid(String id) throws SQLException {
 		Connection conn = DBUtils.getConnection();
-
-		String goods = "b";
+		String sql = "select price from GOODS where GOODSID=?";
+		PreparedStatement stmt;
+		int price = 0;
 		try {
-			String sql = "select goodsname from GOODS where GOODSID=?";
-			PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt = conn.prepareStatement(sql);
 			stmt.setString(1, id);
 			ResultSet rs = stmt.executeQuery();
-			
-			while(rs.next()) {
-				goods = rs.getString(1);
+			while(rs.next()){
+				price = rs.getInt(1);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			System.out.println("查询商品名称失败");
 		}finally {
 			conn.close();
 		}
-		return goods;
+		return price;
 	}
 }

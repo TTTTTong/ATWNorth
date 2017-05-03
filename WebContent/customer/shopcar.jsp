@@ -10,12 +10,14 @@
   
   <body style="text-align:center;">
   
-  <sql:setDataSource var="snapshot" driver="oracle.jdbc.driver.OracleDriver"
+  <sql:setDataSource var="snapshot" 
+     driver="oracle.jdbc.driver.OracleDriver"
      url="jdbc:oracle:thin:127.0.0.1:1521:orcl"
-     user="scott"  password="tiger"/>
+     user="scott"  
+     password="tiger"/>
 
 <sql:query dataSource="${snapshot}" var="result">
-   select *from shopcar
+   select *from shopcar where username ='${username}'
 </sql:query>
 
     <h2>订单列表</h2>
@@ -23,9 +25,9 @@
     	<tr>
     		<td>用户</td>
     		<td>商品</td>
-    		<td>商品号</td>
     		<td>订单号</td>
     		<td>数量</td>
+    		<td>总价</td>
     		<td>操作</td>
  
     	</tr>
@@ -33,11 +35,15 @@
 		<tr>
 		<td><c:out value="${row.username}"/></td>
 		<td><c:out value="${row.goods}"/></td>
-		<td><c:out value="${row.goodsid}"/></td>
 		<td><c:out value="${row.orderid}"/></td>
 		<td><c:out value="${row.count}"/></td>
+		<td><c:out value="${row.price}"/></td>
+		<td>
+	    	<a href="${pageContext.request.contextPath }/SubmitOrderServlet?goodsid=${row.goodsid}">结算</a>
+	    	<a href="${pageContext.request.contextPath }/DeleteOrderServlet?orderid=${row.orderid}">删除</a>
+	    </td>
 		</tr>
-</c:forEach> 	
-	</table>
+		</c:forEach> 	
+		</table>
   </body>
 </html>
