@@ -39,7 +39,7 @@
 		<td><c:out value="${row.count}"/></td>
 		<td><c:out value="${row.price}"/></td>
 		<td>
-	    	<a href="${pageContext.request.contextPath }/SubmitOrderServlet?goodsid=${row.goodsid}">结算</a>
+	    	<a href="${pageContext.request.contextPath }/SubmitOrderServlet?orderid=${row.orderid}">结算</a>
 	    	<a href="${pageContext.request.contextPath }/DeleteOrderServlet?orderid=${row.orderid}">删除</a>
 	    </td>
 		</tr>

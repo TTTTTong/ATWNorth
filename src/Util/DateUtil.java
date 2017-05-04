@@ -6,7 +6,8 @@ import java.util.Date;
 public class DateUtil {
 
 	public static String getTime(){
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmmss");
+		//大写H为24小时制，小写为12小时制
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
 		
 		return sdf.format(new Date());
 	}

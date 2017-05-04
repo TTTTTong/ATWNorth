@@ -45,6 +45,9 @@ public class BuyServlet extends HttpServlet {
 				stmt.setLong(5, count);
 				stmt.setLong(6, price);
 				stmt.executeUpdate();
+				
+				//购买完成后跳转到shopcar页面
+				response.sendRedirect("/ATWNorth/customer/shopcar.jsp");
 			}
 			//如果该商品已经存在购物车中，更改count +1；
 			else{
@@ -56,8 +59,12 @@ public class BuyServlet extends HttpServlet {
 				stmt.setLong(2, price);
 				stmt.setString(3, goodsid);
 				stmt.executeUpdate();
+				
+				//购买完成后跳转到shopcar页面
+				response.sendRedirect("/ATWNorth/customer/shopcar.jsp");
 			}
 	}else {
+		//添加弹框；
 		System.out.println("not login");
 	}
 		} catch (SQLException e) {
@@ -70,9 +77,9 @@ public class BuyServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		}
-		
 	}
+		
+}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
