@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Random;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,7 +37,8 @@ public class BuyServlet extends HttpServlet {
 			//如果该商品不在购物车，加入购物车
 			if(isExist == false){
 				int count =1;
-				String orderid = new DateUtil().getTime() + String.valueOf(count);
+				Random a = new Random(10);
+				String orderid = new DateUtil().getTime() + String.valueOf(count)+String.valueOf((int)(Math.random()*10));
 				String sql = "insert into shopcar values(?,?,?,?,?,?)";
 				PreparedStatement stmt = conn.prepareStatement(sql);
 				stmt.setString(1, username);

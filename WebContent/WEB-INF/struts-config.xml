@@ -13,7 +13,7 @@
     <action-mappings>
        <action path="/login" type="Servlet.LoginActionServlet" name="loginActionForm"
            scope="request">
-           <forward name="success" path="/customer/cus_main.jsp" />
+           <forward name="success" path="/ui 2.0/customer/cus_main.jsp" />
            <forward name="error" path="/login_error.jsp" />
        </action>
        

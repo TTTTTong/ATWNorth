@@ -3,6 +3,7 @@ package Servlet;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -14,6 +15,8 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import Bean.User;
+import Util.DBUtils;
+import Util.DateUtil;
 
 public class RegisterActionServlet extends Action{
 	public ActionForward execute(ActionMapping actionMapping,
@@ -22,7 +25,9 @@ public class RegisterActionServlet extends Action{
 		
 	
 		boolean loginflag = false;
-		
+		String username = servletRequest.getParameter("username");
+		String phone = servletRequest.getParameter("phonenumber");
+		String regdate = new DateUtil().getRegTime();
 		String pwd1 = servletRequest.getParameter("password1");
 		String pwd2 = servletRequest.getParameter("password2");
 		
@@ -32,20 +37,17 @@ public class RegisterActionServlet extends Action{
 			loginflag = true;
 		}
 		
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		String url="jdbc:oracle:thin:127.0.0.1:1521:ORCL";
-		String username="scott";
-		String pwd="tiger";
-		Connection conn = null;
-		
+		Connection conn = DBUtils.getConnection();
 		try {
-			conn = DriverManager.getConnection(url,username,pwd);
-			Statement stmt=conn.createStatement();
-			String sql="insert into MYUSER(USERNAME,PASSWORD,PHONE) values('"
-			+servletRequest.getParameter("username")+"','"+servletRequest.getParameter("password1")+"'"
-					+ ",'"+servletRequest.getParameter("phonenumber")+"')";
-			
-			stmt.executeUpdate(sql);
+			String sql = "insert into myuser values(?,?,?,?,?,?)";
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.setString(1, username);
+			stmt.setString(2, pwd1);
+			stmt.setString(3, phone);
+			stmt.setString(4, " ");
+			stmt.setString(5, regdate);
+			stmt.setString(6, " ");
+			stmt.executeUpdate();
 			
 		} catch (Exception e) {
 			// TODO: handle exception

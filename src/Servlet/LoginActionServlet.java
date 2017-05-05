@@ -2,6 +2,9 @@ package Servlet;
 
 import org.apache.struts.action.*;
 import Bean.LoginActionForm;
+import Util.DBUtils;
+import Util.DateUtil;
+
 import javax.servlet.http.*;
 
 import java.io.IOException;
@@ -20,18 +23,20 @@ public class LoginActionServlet  extends Action{
 		HttpSession session = servletRequest.getSession();
 		
 		boolean loginflag = false;
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		String url="jdbc:oracle:thin:127.0.0.1:1521:ORCL";
-		String username="scott";
-		String pwd="tiger";
-		Connection conn = null;
+		Connection conn = DBUtils.getConnection();
 		
 		try {
-			conn = DriverManager.getConnection(url,username,pwd);
 			Statement stmt=conn.createStatement();
 			String sql = "select * from MYUSER where username ='"
 			+loginActionForm.getUsername()+"'";
 			ResultSet rs = stmt.executeQuery(sql);
+			
+			//记录用户登录时间
+			String sql1 = "update myuser set lastlogin=? where username=? ";
+			PreparedStatement stmt1 = conn.prepareStatement(sql1);
+			stmt1.setString(1, new DateUtil().getLogTime());
+			stmt1.setString(2, loginActionForm.getUsername());
+			stmt1.executeUpdate();
 			
 			//处理结果集
 			while(rs.next()){
@@ -51,7 +56,7 @@ public class LoginActionServlet  extends Action{
 	if(loginflag){
 		session.setAttribute("username", loginActionForm.getUsername());
 		try {
-			servletResponse.sendRedirect("/ATWNorth/customer/cus_main.jsp");
+			servletResponse.sendRedirect("/ATWNorth/ui 1.0/customer/cus_main.jsp");
 		} catch (IOException e) {
 			e.printStackTrace();
 		} 
