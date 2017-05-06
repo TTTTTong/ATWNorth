@@ -28,7 +28,7 @@ public class DeleteOrderServlet extends HttpServlet {
 			stmt.executeUpdate();
 			
 			//从购物车中删除订单后刷新页面
-			response.sendRedirect("/ATWNorth/customer/shopcar.jsp");
+			response.sendRedirect("/ATWNorth/ui 1.0/customer/shopcar.jsp");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

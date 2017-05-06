@@ -12,8 +12,7 @@
       <param-value>/WEB-INF/struts-config.xml</param-value>
     </init-param>
   </servlet>
-  
-   <servlet>
+  <servlet>
     <servlet-name>buyServlet</servlet-name>
     <servlet-class>Servlet.BuyServlet</servlet-class>
   </servlet>
@@ -22,17 +21,20 @@
     <servlet-class>Servlet.DeleteOrderServlet</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>logoutServlet</servlet-name>
-  	<servlet-class>Servlet.LogoutServlet</servlet-class>
+    <servlet-name>logoutServlet</servlet-name>
+    <servlet-class>Servlet.LogoutServlet</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>submitOrderServlet</servlet-name>
-  	<servlet-class>Servlet.SubmitOrderServlet</servlet-class>
+    <servlet-name>submitOrderServlet</servlet-name>
+    <servlet-class>Servlet.SubmitOrderServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>GetGoodsInfoServlet</servlet-name>
+  	<servlet-class>Servlet.GetGoodsInfoServlet</servlet-class>
   </servlet>
   
   
-  
-   <servlet-mapping>
+  <servlet-mapping>
     <servlet-name>action</servlet-name>
     <url-pattern>*.do</url-pattern>
   </servlet-mapping>
@@ -45,11 +47,15 @@
     <url-pattern>/DeleteOrderServlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>logoutServlet</servlet-name>
-  	<url-pattern>/LogoutServlet</url-pattern>
+    <servlet-name>logoutServlet</servlet-name>
+    <url-pattern>/LogoutServlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>submitOrderServlet</servlet-name>
-  	<url-pattern>/SubmitOrderServlet</url-pattern>
+    <servlet-name>submitOrderServlet</servlet-name>
+    <url-pattern>/SubmitOrderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>GetGoodsInfoServlet</servlet-name>
+  	<url-pattern>/GetGoodsInfoServlet</url-pattern>
   </servlet-mapping>
 </web-app>

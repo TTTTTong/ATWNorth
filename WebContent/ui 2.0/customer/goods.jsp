@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+   <script src="js/jquery.mobile-1.3.2.min.js"></script>
+   <script src="js/jquery-3.2.0.js"></script>
    <script src="../js/goods.js"></script>
    <link rel="stylesheet" href="../css/newgoods.css">
    
@@ -12,104 +13,91 @@
 </head>
 <body>
   
-<figure class="snip1584"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87"/>
+<figure class="snip1584"><img src="../img/111.jpg"/>
   <figcaption>
-    <h3>Burgundy Flemming</h3>
-    <h5>Advertising</h5>
-  </figcaption><a href="#"></a>
+    <h3>Nvidia 1080</h3>
+    <h5>￥5688</h5>
+  </figcaption><a href="${pageContext.request.contextPath }/GetGoodsInfoServlet?goodsid=003"></a>
 </figure>
-<figure class="snip1584"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87"/>
+<figure class="snip1584"><img src="../img/111.jpg"/>
   <figcaption>
-    <h3>Nigel Nigel</h3>
-    <h5>Sound &amp; Vision</h5>
-  </figcaption><a href="#"></a>
-</figure>
-<figure class="snip1584"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87"/>
-  <figcaption>
-    <h3>Caspian Bellevedere</h3>
-    <h5>Accounting</h5>
-  </figcaption><a href="#"></a>
-</figure>
-<figure class="snip1584"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87"/>
-  <figcaption>
-    <h3>Caspian Bellevedere</h3>
-    <h5>Accounting</h5>
-  </figcaption><a href="#"></a>
-</figure>
-<figure class="snip1584"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87"/>
-  <figcaption>
-    <h3>Caspian Bellevedere</h3>
-    <h5>Accounting</h5>
-  </figcaption><a href="#"></a>
-</figure>
-<figure class="snip1584"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87"/>
-  <figcaption>
-    <h3>Caspian Bellevedere</h3>
-    <h5>Accounting</h5>
-  </figcaption><a href="#"></a>
-</figure>
-<figure class="snip1584"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87"/>
-  <figcaption>
-    <h3>Caspian Bellevedere</h3>
-    <h5>Accounting</h5>
-  </figcaption><a href="#"></a>
-</figure>
-<figure class="snip1584"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87"/>
-  <figcaption>
-    <h3>Caspian Bellevedere</h3>
-    <h5>Accounting</h5>
-  </figcaption><a href="#"></a>
-</figure>
-<figure class="snip1584"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87"/>
-  <figcaption>
-    <h3>Caspian Bellevedere</h3>
-    <h5>Accounting</h5>
-  </figcaption><a href="#"></a>
-</figure>
-<figure class="snip1584"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87"/>
-  <figcaption>
-    <h3>Caspian Bellevedere</h3>
-    <h5>Accounting</h5>
-  </figcaption><a href="#"></a>
-</figure>
-<figure class="snip1584"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87"/>
-  <figcaption>
-    <h3>Caspian Bellevedere</h3>
-    <h5>Accounting</h5>
-  </figcaption><a href="#"></a>
-</figure>
-<figure class="snip1584"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87"/>
-  <figcaption>
-    <h3>Caspian Bellevedere</h3>
-    <h5>Accounting</h5>
-  </figcaption><a href="#"></a>
-</figure>
-<figure class="snip1584"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87"/>
-  <figcaption>
-    <h3>Caspian Bellevedere</h3>
-    <h5>Accounting</h5>
-  </figcaption><a href="#"></a>
-</figure>
-<figure class="snip1584"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87"/>
-  <figcaption>
-    <h3>Caspian Bellevedere</h3>
-    <h5>Accounting</h5>
-  </figcaption><a href="#"></a>
-</figure>
-<figure class="snip1584"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87"/>
-  <figcaption>
-    <h3>Caspian Bellevedere</h3>
-    <h5>Accounting</h5>
-  </figcaption><a href="#"></a>
-</figure>
-<figure class="snip1584"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87"/>
-  <figcaption>
-    <h3>Caspian Bellevedere</h3>
-    <h5>Accounting</h5>
-  </figcaption><a href="#"></a>
+    <h3>Nvidia 1080</h3>
+    <h5>￥5688</h5>
+   </figcaption><a href="${pageContext.request.contextPath }/GetGoodsInfoServlet?goodsid=001"></a>
+
 </figure>
 
- 
+<figure class="snip1584"><img src="../img/111.jpg"/>
+  <figcaption>
+    <h3>Nvidia 1080</h3>
+    <h5>￥5688</h5>
+  </figcaption><a href="goodsInfo.jsp"></a>
+</figure>
+
+<figure class="snip1584"><img src="../img/111.jpg"/>
+  <figcaption>
+    <h3>Nvidia 1080</h3>
+    <h5>￥5688</h5>
+  </figcaption><a href="goodsInfo.jsp"></a>
+</figure>
+
+<figure class="snip1584"><img src="../img/111.jpg"/>
+  <figcaption>
+    <h3>Nvidia 1080</h3>
+    <h5>￥5688</h5>
+  </figcaption><a href="goodsInfo.jsp"></a>
+</figure>
+
+<figure class="snip1584"><img src="../img/111.jpg"/>
+  <figcaption>
+    <h3>Nvidia 1080</h3>
+    <h5>￥5688</h5>
+  </figcaption><a href="goodsInfo.jsp"></a>
+</figure>
+
+<figure class="snip1584"><img src="../img/111.jpg"/>
+  <figcaption>
+    <h3>Nvidia 1080</h3>
+    <h5>￥5688</h5>
+  </figcaption><a href="goodsInfo.jsp"></a>
+</figure>
+
+<figure class="snip1584"><img src="../img/111.jpg"/>
+  <figcaption>
+    <h3>Nvidia 1080</h3>
+    <h5>￥5688</h5>
+  </figcaption><a href="goodsInfo.jsp"></a>
+</figure>
+
+<figure class="snip1584"><img src="../img/111.jpg"/>
+  <figcaption>
+    <h3>Nvidia 1080</h3>
+    <h5>￥5688</h5>
+  </figcaption><a href="goodsInfo.jsp"></a>
+</figure>
+
+<figure class="snip1584"><img src="../img/111.jpg"/>
+  <figcaption>
+    <h3>Nvidia 1080</h3>
+    <h5>￥5688</h5>
+  </figcaption><a href="goodsInfo.jsp"></a>
+</figure>
+
+<figure class="snip1584"><img src="../img/111.jpg"/>
+  <figcaption>
+    <h3>Nvidia 1080</h3>
+    <h5>￥5688</h5>
+  </figcaption><a href="goodsInfo.jsp"></a>
+</figure>
+
+<figure class="snip1584"><img src="../img/111.jpg"/>
+  <figcaption>
+    <h3>Nvidia 1080</h3>
+    <h5>￥5688</h5>
+  </figcaption><a href="goodsInfo.jsp"></a>
+</figure>
+
+
 
 </body>
 </html>

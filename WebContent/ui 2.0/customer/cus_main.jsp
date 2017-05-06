@@ -14,7 +14,8 @@
   <a class="link-1" href="shopcar.jsp" target="123">购物车</a>
   <a class="link-1" href="#">订单</a>
   <a class="link-1" href="#">个人信息</a>
-</nav>
+   ${username == null?'<a class="link-3" href="../../login.jsp">请登录</a>':'<a class="link-3" href="person.jsp" target="123">Hello ${username} <a class="link-3" href="/ATWNorth/LogoutServlet">注销</a></a>'}
+ </nav>
 
 <div>
     <iframe src="goods.jsp" frameborder="0" width=100% height=1000px name="123" scrolling="auto" frameborder="0" ></iframe>

@@ -92,7 +92,7 @@ public class SubmitOrderServlet extends HttpServlet {
 			
 			
 			//跳转到已完成订单页
-			response.sendRedirect("/ATWNorth/customer/order.jsp");
+			response.sendRedirect("/ATWNorth/ui 1.0/customer/order.jsp");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

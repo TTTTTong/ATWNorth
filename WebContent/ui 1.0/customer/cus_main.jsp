@@ -40,8 +40,10 @@
 </header>
 <main>
   <div class="title">
-    <h2></h2>
-    <a href="${pageContext.request.contextPath}/LogoutServlet">Hello ${username}!</a>
+  <h2></h2>
+  <!--  <a href="${pageContext.request.contextPath}/LogoutServlet">Hello ${username}!</a> -->
+
+    ${username == null?'<a href="../../login.jsp">请登录</a>':'<a href="person.jsp" target="123">Hello ${username}!,<a href="/ATWNorth/LogoutServlet">注销</a></a>'}
   </div>
    <article class="larg">
 <div>

@@ -24,7 +24,7 @@ public class LogoutServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.getSession().invalidate();
-		response.sendRedirect("/ATWNorth/customer/cus_main.jsp");
+		response.sendRedirect("/ATWNorth/ui 1.0/customer/cus_main.jsp");
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 

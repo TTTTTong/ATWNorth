@@ -64,7 +64,7 @@ public class BuyServlet extends HttpServlet {
 				stmt.executeUpdate();
 				
 				//购买完成后跳转到shopcar页面
-				response.sendRedirect("/ATWNorth/customer/shopcar.jsp");
+				response.sendRedirect("/ATWNorth/ui 1.0/customer/shopcar.jsp");
 			}
 	}else {
 		//添加弹框；
@@ -81,7 +81,6 @@ public class BuyServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-		
 }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
