@@ -1,0 +1,34 @@
+* {
+    -webket-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    background: #6d153b;
+    color: #aaa
+}
+form {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    font-family: sans-serif;
+}
+form div {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    margin-top: 50px;
+}
+form div input {
+    width: 100%;
+    padding: 5px;
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #ad3064;
+    color: #fff
+}
+form div input, form div label {
+    position: absolute
+}

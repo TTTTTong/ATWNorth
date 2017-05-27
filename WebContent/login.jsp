@@ -12,7 +12,7 @@
 <div id="mainlogin">
 <h1>Log in with awesome new thing</h1>
 <form action="login.do" method="post">
-<input type="text" placeholder="username or email" name="username" required>
+<input type="text" placeholder="username" name="username" required>
 <input type="password" placeholder="password" name="password" required>
 <button type="submit" >GO<i class="fa fa-arrow-right"></i></button>
 </form>

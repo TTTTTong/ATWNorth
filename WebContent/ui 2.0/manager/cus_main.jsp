@@ -11,12 +11,10 @@
 <body>
 	 <nav id="nav-1">
   <a class="link-1" href="goods.jsp" target="123">首页</a>
-  <a class="link-1" href="shopcar.jsp" target="123">购物车</a>
-  <a class="link-1" href="order.jsp" target="123">订单</a>
-  <a class="link-1" href="person.jsp"  target="123">我的信息</a>
+  <a class="link-1" href="order.jsp"  target="123">用户订单</a>
+  <a class="link-1" href="person.jsp"  target="123">用户列表</a>
   <a class="link-1" href="#"  target="123">关于</a>
-   ${username == null?'<a class="link-3" href="../../login.jsp">请登录</a>':'<a class="link-3" href="person.jsp" target="123">Hello ${username}</a> <a class="link-3" href="/ATWNorth/LogoutServlet">注销</a>'}
- </nav>
+  </nav>
 
 <div>
     <iframe src="goods.jsp" frameborder="0" width=100% height=1000px name="123" scrolling="auto" frameborder="0" ></iframe>

@@ -7,8 +7,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Store</title>
-<script src="js/jquery.mobile-1.3.2.min.js"></script>
-<script src="js/jquery-3.2.0.js"></script>
+<script src="../../js/jquery.mobile-1.3.2.min.js"></script>
+<script src="../../js/jquery-3.2.0.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
@@ -43,7 +43,7 @@
   <h2></h2>
   <!--  <a href="${pageContext.request.contextPath}/LogoutServlet">Hello ${username}!</a> -->
 
-    ${username == null?'<a href="../../login.jsp">请登录</a>':'<a href="person.jsp" target="123">Hello ${username}!,<a href="/ATWNorth/LogoutServlet">注销</a></a>'}
+    ${username == null?'<a href="../../login.jsp">请登录</a>':'<a href="person.jsp" target="123">Hello ${username}! <a href="/ATWNorth/LogoutServlet">注销</a></a>'}
   </div>
    <article class="larg">
 <div>
@@ -51,7 +51,6 @@
 </div>
   </article>
 </main>
-
 
 <style>
 @charset "UTF-8";

@@ -56,7 +56,7 @@ public class LoginActionServlet  extends Action{
 	if(loginflag){
 		session.setAttribute("username", loginActionForm.getUsername());
 		try {
-			servletResponse.sendRedirect("/ATWNorth/ui 1.0/customer/cus_main.jsp");
+			servletResponse.sendRedirect("/ATWNorth/ui 2.0/customer/cus_main.jsp");
 		} catch (IOException e) {
 			e.printStackTrace();
 		} 

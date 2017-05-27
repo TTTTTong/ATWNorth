@@ -50,7 +50,7 @@ public class BuyServlet extends HttpServlet {
 				stmt.executeUpdate();
 				
 				//购买完成后跳转到shopcar页面
-				response.sendRedirect("/ATWNorth/customer/shopcar.jsp");
+				response.sendRedirect("/ATWNorth/ui 1.0/customer/shopcar.jsp");
 			}
 			//如果该商品已经存在购物车中，更改count +1；
 			else{

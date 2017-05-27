@@ -29,11 +29,9 @@
     <servlet-class>Servlet.SubmitOrderServlet</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>GetGoodsInfoServlet</servlet-name>
-  	<servlet-class>Servlet.GetGoodsInfoServlet</servlet-class>
+    <servlet-name>GetGoodsInfoServlet</servlet-name>
+    <servlet-class>Servlet.GetGoodsInfoServlet</servlet-class>
   </servlet>
-  
-  
   <servlet-mapping>
     <servlet-name>action</servlet-name>
     <url-pattern>*.do</url-pattern>
@@ -55,7 +53,7 @@
     <url-pattern>/SubmitOrderServlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>GetGoodsInfoServlet</servlet-name>
-  	<url-pattern>/GetGoodsInfoServlet</url-pattern>
+    <servlet-name>GetGoodsInfoServlet</servlet-name>
+    <url-pattern>/GetGoodsInfoServlet</url-pattern>
   </servlet-mapping>
 </web-app>
