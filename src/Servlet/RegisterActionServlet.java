@@ -24,7 +24,7 @@ public class RegisterActionServlet extends Action{
 			HttpServletResponse servletResponse) throws ClassNotFoundException, SQLException, IOException{
 		
 	
-		boolean loginflag = false;
+		boolean loginflag = true;
 		String username = servletRequest.getParameter("username");
 		String phone = servletRequest.getParameter("phonenumber");
 		String regdate = new DateUtil().getRegTime();
@@ -39,7 +39,7 @@ public class RegisterActionServlet extends Action{
 		
 		Connection conn = DBUtils.getConnection();
 		try {
-			String sql = "insert into myuser values(?,?,?,?,?,?)";
+			String sql = "insert into myuser values(?,?,?,?,?,?,?)";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, username);
 			stmt.setString(2, pwd1);
@@ -47,6 +47,7 @@ public class RegisterActionServlet extends Action{
 			stmt.setString(4, " ");
 			stmt.setString(5, regdate);
 			stmt.setString(6, " ");
+			stmt.setLong(7, 0);
 			stmt.executeUpdate();
 			
 		} catch (Exception e) {
@@ -55,9 +56,24 @@ public class RegisterActionServlet extends Action{
 			conn.close();
 		}
 	
+//		if(loginflag){
+//			servletResponse.sendRedirect("/ATWNorth/login.jsp");
+//			return actionMapping.findForward("null");
+//				
+//	}
+		//处理转发  
 		if(loginflag){
-			return actionMapping.findForward("success");	
-	}else{
+		
+			try {
+				servletResponse.sendRedirect("/ATWNorth/login.jsp");
+				System.out.println("regservelt");
+			} catch (IOException e) {
+				e.printStackTrace();
+			} 
+			//不执行
+			return actionMapping.findForward("null");
+		
+		}else{
 		return actionMapping.findForward("error");
 	}
 

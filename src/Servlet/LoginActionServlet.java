@@ -56,7 +56,11 @@ public class LoginActionServlet  extends Action{
 	if(loginflag){
 		session.setAttribute("username", loginActionForm.getUsername());
 		try {
+			if(loginActionForm.getUsername().equals("root")){
+				servletResponse.sendRedirect("/ATWNorth/ui 2.0/manager/mng_main.jsp");
+			}else{
 			servletResponse.sendRedirect("/ATWNorth/ui 2.0/customer/cus_main.jsp");
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		} 

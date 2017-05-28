@@ -15,37 +15,26 @@
      password="tiger"/>
 
 <sql:query dataSource="${snapshot}" var="result">
-   select *from orderlist order by username
+   select *from goods
 </sql:query>
 
-    <h2>订单列表</h2>
+    <h2>网站营收</h2>
     <table width="60%" border="1" align="center" style="text-align: center;">
     	<tr>
-    		<td>用户</td>
-    		<td>手机号</td>
-    		<td>商品</td>
-    		<td>收货地址</td>
-    		<td>订单号</td>
-    		<td>数量</td>
-    		<td>总价</td>
-    		<td>状态</td>
-    		<td>操作</td>
- 
+    		<td>商品编号</td>
+    		<td>商品名</td>
+    		<td>销量</td>
+    		<td>单价</td>
+    		<td>总计</td>
     	</tr>
     	
     	<c:forEach var="row" items="${result.rows}">
-    	
 		<tr>
-		<td><c:out value="${row.username}"/></td>
-		<td><c:out value="${row.phone}"/></td>
-		<td><c:out value="${row.goods}"/></td>
-		<td><c:out value="${row.address}"/></td>
-		<td><c:out value="${row.orderid}"/></td>
-		<td><c:out value="${row.count}"/></td>
+		<td><c:out value="${row.goodsid}"/></td>
+		<td><c:out value="${row.goodsname}"/></td>
+		<td><c:out value="${row.sales}"/></td>
 		<td><c:out value="${row.price}"/></td>
-		<td><c:out value="${row.state}"/></td>
-		<td>${row.state == "未发货"?'<a href="${pageContext.request.contextPath }/DeliverServlet?orderid=${row.orderid}">发货</a>':'无'}
-		</td>
+		<td><c:out value="${row.price}*${row.sales}"/></td>
      	</tr>
 		</c:forEach> 	
 		</table>

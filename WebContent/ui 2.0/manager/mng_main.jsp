@@ -13,7 +13,9 @@
   <a class="link-1" href="goods.jsp" target="123">首页</a>
   <a class="link-1" href="order.jsp"  target="123">用户订单</a>
   <a class="link-1" href="person.jsp"  target="123">用户列表</a>
-  <a class="link-1" href="#"  target="123">关于</a>
+  <a class="link-1" href="turnover.jsp"  target="123">营收</a>
+  <a class="link-1" href="about.jsp"  target="123">关于</a>
+  <a class="link-3"  target="123">Hello 尊敬的管理员</a>
   </nav>
 
 <div>

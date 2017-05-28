@@ -32,6 +32,12 @@
     <servlet-name>GetGoodsInfoServlet</servlet-name>
     <servlet-class>Servlet.GetGoodsInfoServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>DeliverServlet</servlet-name>
+  	<servlet-class>Servlet.manager.DeliverServlet</servlet-class>
+  </servlet>
+  
+  
   <servlet-mapping>
     <servlet-name>action</servlet-name>
     <url-pattern>*.do</url-pattern>
@@ -55,5 +61,9 @@
   <servlet-mapping>
     <servlet-name>GetGoodsInfoServlet</servlet-name>
     <url-pattern>/GetGoodsInfoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeliverServlet</servlet-name>
+  	<url-pattern>/DeliverServlet</url-pattern>
   </servlet-mapping>
 </web-app>
