@@ -44,8 +44,16 @@
 		<td><c:out value="${row.count}"/></td>
 		<td><c:out value="${row.price}"/></td>
 		<td><c:out value="${row.state}"/></td>
-		<td>${row.state == "未发货"?'<a href="${pageContext.request.contextPath }/DeliverServlet?orderid=${row.orderid}">发货</a>':'无'}
-		</td>
+		<td><c:if test="${row.state == '已发货'}">
+	                     无
+	     </c:if>
+	     <c:if test="${row.state == '未发货' }">
+	                     发货
+	     </c:if>
+	     <c:if test="${row.state == '请求退货' }">
+	                     退货
+	     </c:if>
+	     </td>
      	</tr>
 		</c:forEach> 	
 		</table>

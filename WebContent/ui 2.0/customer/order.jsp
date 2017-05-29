@@ -28,6 +28,7 @@
     		<td>数量</td>
     		<td>总价</td>
     		<td>状态</td>
+    		<td>操作</td>
  
     	</tr>
     	<c:forEach var="row" items="${result.rows}">
@@ -40,6 +41,8 @@
 		<td><c:out value="${row.count}"/></td>
 		<td><c:out value="${row.price}"/></td>
 		<td><c:out value="${row.state}"/></td>
+		<td>${row.state == "已发货"?'<a href="${pageContext.request.contextPath }/ReturnServlet?orderid=${row.orderid}">退货</a>':'无'}
+		</td>
 	    
 		</tr>
 		</c:forEach> 	

@@ -33,8 +33,12 @@
     <servlet-class>Servlet.GetGoodsInfoServlet</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>DeliverServlet</servlet-name>
-  	<servlet-class>Servlet.manager.DeliverServlet</servlet-class>
+    <servlet-name>DeliverServlet</servlet-name>
+    <servlet-class>Servlet.manager.DeliverServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ReturnServlet</servlet-name>
+  	<servlet-class>Servlet.ReturnServlet</servlet-class>
   </servlet>
   
   
@@ -63,7 +67,11 @@
     <url-pattern>/GetGoodsInfoServlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>DeliverServlet</servlet-name>
-  	<url-pattern>/DeliverServlet</url-pattern>
+    <servlet-name>DeliverServlet</servlet-name>
+    <url-pattern>/DeliverServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ReturnServlet</servlet-name>
+  	<url-pattern>/ReturnServlet</url-pattern>
   </servlet-mapping>
 </web-app>

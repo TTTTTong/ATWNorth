@@ -24,7 +24,6 @@ public class SubmitOrderServlet extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -34,7 +33,7 @@ public class SubmitOrderServlet extends HttpServlet {
 		String orderid = request.getParameter("orderid");
 		String sql = "select * from shopcar where orderid=?";
 		String sql1="select *from myuser where username=?";
-		String sql2="insert into orderlist values(?,?,?,?,?,?,?)";
+		String sql2="insert into orderlist values(?,?,?,?,?,?,?,?)";
 		String sql3 = "delete from shopcar where orderid=?";
 		
 		PreparedStatement stmt;
@@ -46,6 +45,7 @@ public class SubmitOrderServlet extends HttpServlet {
 		String goods = "";
 		String phone = "";
 		String address = "";
+		String state = "未发货";
 		int count = 0;
 		int price = 0;
 		
@@ -80,6 +80,7 @@ public class SubmitOrderServlet extends HttpServlet {
 			stmt2.setString(5, orderid);
 			stmt2.setInt(6, count);
 			stmt2.setInt(7, price);
+			stmt2.setString(8, state);
 			stmt2.executeUpdate();
 			
 			//从shopcar中删除此订单
@@ -92,7 +93,7 @@ public class SubmitOrderServlet extends HttpServlet {
 			
 			
 			//跳转到已完成订单页
-			response.sendRedirect("/ATWNorth/ui 1.0/customer/order.jsp");
+			response.sendRedirect("/ATWNorth/ui 2.0/customer/order.jsp");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

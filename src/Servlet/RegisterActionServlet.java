@@ -24,37 +24,41 @@ public class RegisterActionServlet extends Action{
 			HttpServletResponse servletResponse) throws ClassNotFoundException, SQLException, IOException{
 		
 	
-		boolean loginflag = true;
+		boolean loginflag = false;
 		String username = servletRequest.getParameter("username");
 		String phone = servletRequest.getParameter("phonenumber");
 		String regdate = new DateUtil().getRegTime();
-		String pwd1 = servletRequest.getParameter("password1");
-		String pwd2 = servletRequest.getParameter("password2");
+		String pwd1 = new String(servletRequest.getParameter("password1"));
+		String pwd2 = new String(servletRequest.getParameter("password2"));
 		
-		if(pwd1 != pwd2 ){
-			servletResponse.getWriter().print("<script>alert(\"password wrong!\");</script>") ;
+		
+		if(pwd1.equals(pwd2) == false){
+			servletResponse.getWriter().print("<script>alert(\"password wrong!\");</script>");
+			System.out.println("password error");
 		}else {
 			loginflag = true;
+			
+			Connection conn = DBUtils.getConnection();
+			try {
+				String sql = "insert into myuser values(?,?,?,?,?,?,?)";
+				PreparedStatement stmt = conn.prepareStatement(sql);
+				stmt.setString(1, username);
+				stmt.setString(2, pwd1);
+				stmt.setString(3, phone);
+				stmt.setString(4, " ");
+				stmt.setString(5, regdate);
+				stmt.setString(6, " ");
+				stmt.setLong(7, 0);
+				stmt.executeUpdate();
+				
+			} catch (Exception e) {
+				// TODO: handle exception
+			}finally {
+				conn.close();
+			}
 		}
 		
-		Connection conn = DBUtils.getConnection();
-		try {
-			String sql = "insert into myuser values(?,?,?,?,?,?,?)";
-			PreparedStatement stmt = conn.prepareStatement(sql);
-			stmt.setString(1, username);
-			stmt.setString(2, pwd1);
-			stmt.setString(3, phone);
-			stmt.setString(4, " ");
-			stmt.setString(5, regdate);
-			stmt.setString(6, " ");
-			stmt.setLong(7, 0);
-			stmt.executeUpdate();
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-		}finally {
-			conn.close();
-		}
+		
 	
 //		if(loginflag){
 //			servletResponse.sendRedirect("/ATWNorth/login.jsp");
@@ -74,7 +78,8 @@ public class RegisterActionServlet extends Action{
 			return actionMapping.findForward("null");
 		
 		}else{
-		return actionMapping.findForward("error");
+			servletResponse.sendRedirect("/ATWNorth/register.jsp");
+			return actionMapping.findForward("error");
 	}
 
 }

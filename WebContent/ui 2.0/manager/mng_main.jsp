@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Store</title>
+  <title>Manager</title>
   <link rel="stylesheet" href="../css/cus-main.css">
   <link rel="icon" href="../../img/icon1.ico" type="image/x-icon"/>
 </head>
