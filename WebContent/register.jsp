@@ -16,6 +16,7 @@
 <input type="password" placeholder="password" name="password1" required>
 <input type="password" placeholder="confirm password" name="password2" required>
 <input type="tel" placeholder="phonenumber" name="phonenumber" required>
+<input type="tel" placeholder="address" name="address" required>
 <button type="submit" >OK<i class="fa fa-arrow-right"></i></button>
 </form>
 </div>
@@ -178,7 +179,7 @@ float:left;
 left:50%;
 top:50%;
 width:250px;
-height:260px;
+height:300px;
 padding:10px 15px;
 position:absolute;
 background:#555555;

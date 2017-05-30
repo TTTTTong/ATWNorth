@@ -37,8 +37,12 @@
     <servlet-class>Servlet.manager.DeliverServlet</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>ReturnServlet</servlet-name>
-  	<servlet-class>Servlet.ReturnServlet</servlet-class>
+    <servlet-name>ReturnServlet</servlet-name>
+    <servlet-class>Servlet.ReturnServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AffirmReturnServlet</servlet-name>
+  	<servlet-class>Servlet.manager.AffirmReturnServlet</servlet-class>
   </servlet>
   
   
@@ -71,7 +75,11 @@
     <url-pattern>/DeliverServlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>ReturnServlet</servlet-name>
-  	<url-pattern>/ReturnServlet</url-pattern>
+    <servlet-name>ReturnServlet</servlet-name>
+    <url-pattern>/ReturnServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AffirmReturnServlet</servlet-name>
+  	<url-pattern>/AffirmReturnServlet</url-pattern>
   </servlet-mapping>
 </web-app>

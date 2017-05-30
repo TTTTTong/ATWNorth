@@ -30,6 +30,11 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>WebContent/shopping3.jsp</name>
+			<type>1</type>
+			<location>C:/Users/TONG/Desktop/GoShopping-master/web/shopping3.jsp</location>
+		</link>
+		<link>
 			<name>WebContent/WEB-INF/lib/antlr-2.7.7.jar</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/Eclipse%E7%8E%AF%E5%A2%83/hibernate-release-4.2.4.Final/hibernate-release-4.2.4.Final/lib/%E5%90%88%E5%B9%B6/antlr-2.7.7.jar</locationURI>

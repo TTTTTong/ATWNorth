@@ -30,6 +30,7 @@ public class RegisterActionServlet extends Action{
 		String regdate = new DateUtil().getRegTime();
 		String pwd1 = new String(servletRequest.getParameter("password1"));
 		String pwd2 = new String(servletRequest.getParameter("password2"));
+		String address = servletRequest.getParameter("address");
 		
 		
 		if(pwd1.equals(pwd2) == false){
@@ -45,17 +46,19 @@ public class RegisterActionServlet extends Action{
 				stmt.setString(1, username);
 				stmt.setString(2, pwd1);
 				stmt.setString(3, phone);
-				stmt.setString(4, " ");
+				stmt.setString(4, address);
 				stmt.setString(5, regdate);
 				stmt.setString(6, " ");
 				stmt.setLong(7, 0);
 				stmt.executeUpdate();
 				
+				System.out.println("注册成功"+username);
 			} catch (Exception e) {
 				// TODO: handle exception
 			}finally {
 				conn.close();
 			}
+			
 		}
 		
 		
@@ -70,7 +73,6 @@ public class RegisterActionServlet extends Action{
 		
 			try {
 				servletResponse.sendRedirect("/ATWNorth/login.jsp");
-				System.out.println("regservelt");
 			} catch (IOException e) {
 				e.printStackTrace();
 			} 
