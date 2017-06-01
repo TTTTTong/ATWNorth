@@ -14,7 +14,7 @@
      password="tiger"/>
 
 <sql:query dataSource="${snapshot}" var="result">
-   select *from orderlist where username ='${username}'
+   select *from orderlist where username ='${username}' order by orderid desc
 </sql:query>
 
     <h2>订单列表</h2>
@@ -41,7 +41,15 @@
 		<td><c:out value="${row.count}"/></td>
 		<td><c:out value="${row.price}"/></td>
 		<td><c:out value="${row.state}"/></td>
-		<td>${row.state == "未发货"?'<a href="${pageContext.request.contextPath }/ReturnServlet?orderid=${row.orderid}">退货</a>':'无'}
+	    <td>
+		<c:choose>
+		<c:when test="${row.state == '未发货'}">
+  			<a href="${pageContext.request.contextPath }/ReturnServlet?orderid=${row.orderid}">退货</a>
+  		</c:when>
+  		<c:otherwise>
+  		无
+  	    </c:otherwise>
+		</c:choose>
 		</td>
 	    
 		</tr>

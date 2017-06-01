@@ -4,6 +4,16 @@ public class GoodsInfo {
 	private String goodsid;
 	private String goodsname;
 	private int sales;
+	private int price;
+	private String dscb;
+	private String image;
+	
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
 	public String getGoodsid() {
 		return goodsid;
 	}
@@ -34,8 +44,5 @@ public class GoodsInfo {
 	public void setDscb(String dscb) {
 		this.dscb = dscb;
 	}
-	private int price;
-	private String dscb;
-	
 	
 }

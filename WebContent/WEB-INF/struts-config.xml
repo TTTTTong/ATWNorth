@@ -7,6 +7,7 @@
     <form-beans>
        <form-bean name="loginActionForm" type="Bean.LoginActionForm" />
        <form-bean name="RegActionForm" type="Bean.User"/>
+        <form-bean name="MdfActionForm" type="Bean.user"/>
     </form-beans>
     
     <!-- 组件关系配置 -->
@@ -14,13 +15,18 @@
        <action path="/login" type="Servlet.LoginActionServlet" name="loginActionForm"
            scope="request">
            <forward name="success" path="/ui 2.0/customer/cus_main.jsp" />
-           <forward name="error" path="/login_error.jsp" />
+           <forward name="error" path="/ATWNorth/login.jsp"  />
        </action>
        
        <action path="/register" type="Servlet.RegisterActionServlet" name="RegActionForm"
        scope="request" validate="false">
         <forward name="success" path="/ATWNorth/login.jsp" />
-        <forward name="error" path="/login_error.jsp" />
+        <forward name="error" path="/ATWNorth/register.jsp" />
+       </action>
+       
+       <action path="/modify" type="Servlet.ModifyInfoActionServlet" name="MdfActionForm"
+       scope="request" validate="false">
+        <forward name="success" path="/ui 2.0/customer/cus_main.jsp" />
        </action>
     </action-mappings>
 </struts-config>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,8 +15,14 @@
   <a class="link-1" href="shopcar.jsp" target="123">购物车</a>
   <a class="link-1" href="order.jsp" target="123">订单</a>
   <a class="link-1" href="person.jsp"  target="123">我的信息</a>
-  <a class="link-1" href="#"  target="123">关于</a>
-   ${username == null?'<a class="link-3" href="../../login.jsp">请登录</a>':'<a class="link-3" href="person.jsp" target="123">Hello ${username}</a> <a class="link-3" href="/ATWNorth/LogoutServlet">注销</a>'}
+  
+   <c:if test="${username == null}">
+  	<a class="link-3" href="../../login.jsp">请登录</a>
+  </c:if>
+  <c:if test="${username != null}">
+  	<a class="link-3" href="person.jsp" target="123">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp你好&nbsp ${username}</a><a class="link-3" href="/ATWNorth/LogoutServlet">注销</a>
+  </c:if>
+
  </nav>
 
 <div>

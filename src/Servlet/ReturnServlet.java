@@ -21,13 +21,14 @@ public class ReturnServlet extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String orderid = request.getParameter("orderid");
+		System.out.println(orderid);
+		System.out.println("11");
 		Connection conn = DBUtils.getConnection();
 		String sql = "update orderlist set state=? where orderid=?";
 		PreparedStatement stmt;
@@ -47,10 +48,7 @@ public class ReturnServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-		
-		
-		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.getWriter().print("<script>alert(\"Successful operation!\");</script>");
 	}
 
 	/**

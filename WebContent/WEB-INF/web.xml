@@ -41,11 +41,13 @@
     <servlet-class>Servlet.ReturnServlet</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>AffirmReturnServlet</servlet-name>
-  	<servlet-class>Servlet.manager.AffirmReturnServlet</servlet-class>
+    <servlet-name>AffirmReturnServlet</servlet-name>
+    <servlet-class>Servlet.manager.AffirmReturnServlet</servlet-class>
   </servlet>
-  
-  
+  <servlet>
+    <servlet-name>ModifyInfoServlet</servlet-name>
+    <servlet-class>Servlet.ModifyInfoServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>action</servlet-name>
     <url-pattern>*.do</url-pattern>
@@ -79,7 +81,11 @@
     <url-pattern>/ReturnServlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>AffirmReturnServlet</servlet-name>
-  	<url-pattern>/AffirmReturnServlet</url-pattern>
+    <servlet-name>AffirmReturnServlet</servlet-name>
+    <url-pattern>/AffirmReturnServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ModifyInfoServlet</servlet-name>
+    <url-pattern>/ModifyInfoServlet</url-pattern>
   </servlet-mapping>
 </web-app>

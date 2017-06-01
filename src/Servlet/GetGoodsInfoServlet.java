@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.sun.prism.Image;
+
 import Bean.GoodsInfo;
 import Util.DBUtils;
 import jdk.nashorn.internal.objects.annotations.Where;
@@ -22,6 +24,11 @@ public class GetGoodsInfoServlet extends HttpServlet {
 	
        
     /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
      * @see HttpServlet#HttpServlet()
      */
     public GetGoodsInfoServlet() {
@@ -38,6 +45,7 @@ public class GetGoodsInfoServlet extends HttpServlet {
 		String sql = "select *from goods where goodsid=?";
 		PreparedStatement stmt;
 	
+		HttpSession session = request.getSession();
 		GoodsInfo goodsInfo = new GoodsInfo();
 		try {
 			stmt = conn.prepareStatement(sql);
@@ -50,6 +58,7 @@ public class GetGoodsInfoServlet extends HttpServlet {
 				goodsInfo.setSales(rs.getInt("sales"));
 				goodsInfo.setPrice(rs.getInt("price"));
 				goodsInfo.setDscb(rs.getString("dscb"));
+				goodsInfo.setImage(rs.getString("image"));
 			}
 			
 			
@@ -64,8 +73,9 @@ public class GetGoodsInfoServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-		request.setAttribute("goodsInfo", goodsid);
-		request.getRequestDispatcher("/ui 2.0/customer/goodsInfo.jsp").forward(request,response);
+		session.setAttribute("goodsInfo", goodsInfo);
+		//request.getRequestDispatcher("/ui 2.0/customer/goodsInfo.jsp").forward(request,response);
+		response.sendRedirect("/ATWNorth/ui 2.0/customer/goodsInfo.jsp");
 	}
 
 	/**

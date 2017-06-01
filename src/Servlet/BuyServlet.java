@@ -64,10 +64,10 @@ public class BuyServlet extends HttpServlet {
 				stmt.executeUpdate();
 				
 				//购买完成后跳转到shopcar页面
-				response.sendRedirect("/ATWNorth/ui 1.0/customer/shopcar.jsp");
+				response.sendRedirect("/ATWNorth/ui 2.0/customer/shopcar.jsp");
 			}
 	}else {
-		//添加弹框；
+		response.getWriter().print("<script>alert(\"请登陆!\");</script>");
 		System.out.println("not login");
 	}
 		} catch (SQLException e) {

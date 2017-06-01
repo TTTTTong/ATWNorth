@@ -29,7 +29,6 @@
     		<td>数量</td>
     		<td>总价</td>
     		<td>操作</td>
-    		
  
     	</tr>
     	<c:forEach var="row" items="${result.rows}">

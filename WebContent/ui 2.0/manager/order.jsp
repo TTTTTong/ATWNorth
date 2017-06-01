@@ -15,7 +15,7 @@
      password="tiger"/>
 
 <sql:query dataSource="${snapshot}" var="result">
-   select *from orderlist order by username
+   select *from orderlist order by state
 </sql:query>
 
     <h2>订单列表</h2>

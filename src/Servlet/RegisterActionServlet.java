@@ -24,7 +24,7 @@ public class RegisterActionServlet extends Action{
 			HttpServletResponse servletResponse) throws ClassNotFoundException, SQLException, IOException{
 		
 	
-		boolean loginflag = false;
+		boolean flag = false;
 		String username = servletRequest.getParameter("username");
 		String phone = servletRequest.getParameter("phonenumber");
 		String regdate = new DateUtil().getRegTime();
@@ -37,7 +37,7 @@ public class RegisterActionServlet extends Action{
 			servletResponse.getWriter().print("<script>alert(\"password wrong!\");</script>");
 			System.out.println("password error");
 		}else {
-			loginflag = true;
+			flag = true;
 			
 			Connection conn = DBUtils.getConnection();
 			try {
@@ -57,32 +57,16 @@ public class RegisterActionServlet extends Action{
 				// TODO: handle exception
 			}finally {
 				conn.close();
-			}
-			
+			}	
 		}
-		
-		
-	
-//		if(loginflag){
-//			servletResponse.sendRedirect("/ATWNorth/login.jsp");
-//			return actionMapping.findForward("null");
-//				
-//	}
 		//处理转发  
-		if(loginflag){
-		
-			try {
-				servletResponse.sendRedirect("/ATWNorth/login.jsp");
-			} catch (IOException e) {
-				e.printStackTrace();
-			} 
-			//不执行
+		if(flag){
+			servletResponse.sendRedirect("/ATWNorth/login.jsp");
 			return actionMapping.findForward("null");
-		
 		}else{
-			servletResponse.sendRedirect("/ATWNorth/register.jsp");
-			return actionMapping.findForward("error");
-	}
-
-}
+			//servletResponse.getWriter().print("<script>alert(\"password wrong!\");</script>");
+			//servletResponse.sendRedirect("/ATWNorth/register.jsp");
+			return actionMapping.findForward("null");
+		}
+    }
 }

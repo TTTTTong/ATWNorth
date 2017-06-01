@@ -54,21 +54,26 @@ public class LoginActionServlet  extends Action{
 	
 	//处理转发  
 	if(loginflag){
-		session.setAttribute("username", loginActionForm.getUsername());
+		
 		try {
 			if(loginActionForm.getUsername().equals("root")){
 				servletResponse.sendRedirect("/ATWNorth/ui 2.0/manager/mng_main.jsp");
 			}else{
-			servletResponse.sendRedirect("/ATWNorth/ui 2.0/customer/cus_main.jsp");
+				session.setAttribute("username", loginActionForm.getUsername());
+			    servletResponse.sendRedirect("/ATWNorth/ui 2.0/customer/cus_main.jsp");
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		} 
-		//不执行
 		return actionMapping.findForward("null");
 	}else{
-		return actionMapping.findForward("error");
+		try {
+			servletResponse.getWriter().print("<script>alert(\"用户名或密码错误!\");</script>");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return actionMapping.findForward("null");
 	}
-	
- }
+  }
 }

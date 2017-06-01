@@ -6,6 +6,10 @@
 <html>
   <head>   
     <title>个人信息</title>
+      	  <link rel="stylesheet" href="../css/person.css">
+          <script src="../../js/jquery.mobile-1.3.2.min.js"></script>
+   	    	<script src="../../js/jquery-3.2.0.js"></script>
+   			<script src="../js/person.js"></script>
   </head>
   
   <body style="text-align:center;">
@@ -19,17 +23,26 @@
 <sql:query dataSource="${snapshot}" var="result">
    select *from myuser where username ='${username}'
 </sql:query>
-
-    <h2>我的信息</h2>
-  
-    	<c:forEach var="row" items="${result.rows}">
-    	<form action="modify.do" method="post">
-    	 	<input type="text" placeholder="${row.username}" name="username"><br>
-    	 	<input type="text" placeholder="${row.phone}" name="username"><br>
-    	 	<input type="text" placeholder="${row.address}" name="username"><br>
-    	 	<button type="submit" >修改</button>
-    	 	</form>
-		</c:forEach> 	
-		
-  </body>
+    <div class="container">
+        <div class="contact" ng-controller="Contacts">
+            <h1>Contacts</h1>
+            <div class="add-contact">
+            <c:forEach var="row" items="${result.rows}">
+ <form action="modify.do" method="post">
+          <li>
+         用户名：     <label>${row.username}</label>
+            </li><br>
+            <li>
+        注册日期：     <label>${row.regdate}</label>
+        </li><br>
+            手机号码：    <input type="text" name="phone" placeholder="${row.phone}">
+            收货地址：    <input type="text" name="address" placeholder="${row.address}">
+            <button class="btn-add" type="submit">修改</button>
+            </form>
+             </c:forEach> 	
+            </div>
+        </div>
+    </div>
+</body>
+ 
 </html>

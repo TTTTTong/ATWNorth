@@ -13,6 +13,21 @@ public class User extends ActionForm {
 	private static final long serialVersionUID = 1L;
 	private String username;
 	private String password;
+	private String phone;
+	private String address;
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
 	public String getUsername() {
 		return username;
 	}
