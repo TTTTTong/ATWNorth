@@ -7,7 +7,7 @@
     <form-beans>
        <form-bean name="loginActionForm" type="Bean.LoginActionForm" />
        <form-bean name="RegActionForm" type="Bean.User"/>
-        <form-bean name="MdfActionForm" type="Bean.user"/>
+        <form-bean name="MdfActionForm" type="Bean.User"/>
     </form-beans>
     
     <!-- 组件关系配置 -->

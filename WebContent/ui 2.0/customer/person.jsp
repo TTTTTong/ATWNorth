@@ -28,15 +28,15 @@
             <h1>Contacts</h1>
             <div class="add-contact">
             <c:forEach var="row" items="${result.rows}">
- <form action="modify.do" method="post">
+ <form action="${pageContext.request.contextPath}/ModifyInfoServlet?username=${row.username}" method="post">
           <li>
          用户名：     <label>${row.username}</label>
             </li><br>
             <li>
         注册日期：     <label>${row.regdate}</label>
         </li><br>
-            手机号码：    <input type="text" name="phone" placeholder="${row.phone}">
-            收货地址：    <input type="text" name="address" placeholder="${row.address}">
+            手机号码：    <input type="text" name="phone"  value="${row.phone}">
+            收货地址：    <input type="text" name="address" value="${row.address}">
             <button class="btn-add" type="submit">修改</button>
             </form>
              </c:forEach> 	

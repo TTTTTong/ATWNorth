@@ -48,6 +48,19 @@
     <servlet-name>ModifyInfoServlet</servlet-name>
     <servlet-class>Servlet.ModifyInfoServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>EditGoodsInfoServlet</servlet-name>
+    <servlet-class>Servlet.manager.EditGoodsInfoServlet</servlet-class>
+  </servlet>
+   <servlet>
+    <servlet-name>MngGetGoodsInfoServlet</servlet-name>
+    <servlet-class>Servlet.manager.MngGetGoodsInfoServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DeleteGoodsServlet</servlet-name>
+    <servlet-class>Servlet.manager.DeleteGoodsServlet</servlet-class>
+  </servlet>
+  
   <servlet-mapping>
     <servlet-name>action</servlet-name>
     <url-pattern>*.do</url-pattern>
@@ -87,5 +100,17 @@
   <servlet-mapping>
     <servlet-name>ModifyInfoServlet</servlet-name>
     <url-pattern>/ModifyInfoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EditGoodsInfoServlet</servlet-name>
+    <url-pattern>/EditGoodsInfoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MngGetGoodsInfoServlet</servlet-name>
+    <url-pattern>/MngGetGoodsInfoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeleteGoodsServlet</servlet-name>
+  	<url-pattern>/DeleteGoodsServlet</url-pattern>
   </servlet-mapping>
 </web-app>

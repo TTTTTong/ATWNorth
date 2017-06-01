@@ -29,12 +29,12 @@
  	<figure class="snip1584"><img src="${row.image}"/>
  	 <figcaption>
     <h3>${row.goodsname}</h3>
-    <h5>${row.price}</h5>
+    <h5>￥${row.price}</h5>
  	 </figcaption><a href="${pageContext.request.contextPath }/GetGoodsInfoServlet?goodsid=${row.goodsid}"></a>
 	</figure>
     </c:forEach>
 
-<footer role="contentinfo" aria-label="Footer">
+<footer role="contentinfo"  aria-label="Footer">
   <div class="_cont">
     <div class="top">
       <div class="right">

@@ -8,8 +8,9 @@
   <meta charset="UTF-8">
   <title>Add to cart animation</title>
   <link rel='stylesheet prefetch' href='https://raw.githubusercontent.com/greenwoodents/quickbeam.js/master/demo/css/demo.css'>
-  <link rel="stylesheet" href="../css/goodsInfo.css">
-  
+  <link rel="stylesheet" href="../css/mngGoodsInfo.css">
+  <script src="../../js/jquery.mobile-1.3.2.min.js"></script>
+   <script src="../../js/jquery-3.2.0.js"></script>
 </head>
 
 <body>
@@ -26,63 +27,23 @@
             </div>
           </div>
           <div class="right-col">
-            <h1 itemprop="name">${goodsInfo.goodsname}</h1>
-            <br>
-            <br>
+            
+   			   <form class="login-form" action="${pageContext.request.contextPath}/EditGoodsInfoServlet?goodsid=${goodsInfo.goodsid}" method="post">
+   			   商品：<input type="text"  name="goodsname" value="${goodsInfo.goodsname}" required>
+   			   价格：<input type="text" name="price" value="${goodsInfo.price}" required>
+   			   简介：<input type="text" name="dscb" value="${goodsInfo.dscb}"required>
+   		   		 <button type="submit">修改</button>
+    		   </form>
             <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
               <meta itemprop="priceCurrency" content="USD">
               <link itemprop="availability" href="http://schema.org/InStock">
-              <div class="price-shipping">
-                <div class="price" id="price-preview" quickbeam="price" quickbeam-price="800">
-                  	 ￥${goodsInfo.price}
-                </div>
-                 <ul>
-                  <li class="promise_lo">&nbsp&nbsp&nbsp&nbsp&nbsp销量&nbsp${goodsInfo.sales}</li>
-                 </ul>
-              </div>
-              <div class="swatches">
-                <div class="swatch clearfix" data-option-index="0">
-                  <div class="header">${goodsInfo.dscb}</div>
-                
-                </div>
-                <div class="swatch clearfix" data-option-index="1">
-                  <div class="header"></div>
-          
-                </div>
-              </div>
-              <!-- <form method="post" enctype="multipart/form-data" id="AddToCartForm"> -->
-              <form id="AddToCartForm">
-              
-              <div class="btn-and-quantity-wrap">
-                  <div class="btn-and-quantity">
-                 <!--     <div class="spinner">
-                    <span class="btn minus" data-id="2721888517"></span>
-                      <input type="text" id="updates_2721888517" name="quantity" value="1" class="quantity-selector">
-                      <input type="hidden" id="product_id" name="product_id" value="2721888517">
-                      <!-- <span class="q">Qty.</span> 
-                      <span class="btn plus" data-id="2721888517"></span>
-                    </div>
-                 -->  
-                    <div id="AddToCart" >
-                     <!--   <span id="AddToCartText" >加入购物车</span>  -->
-                      <a href="${pageContext.request.contextPath }/BuyServlet?goodsid=${goodsInfo.goodsid}">加入购物车</a>
-                    </div>
-                  </div>
-                </div>
-              </form>
                <div class="tabs">
                 <div class="promise">
   <dl>
-  
- <dt class="priceinfo_dt" style="margin-top:15px;">
- <br>
- <br>
- <br>
- <br>
- <br>
-        服务承诺
+ 	<dt class="priceinfo_dt" style="margin-top:15px;">
+      	  服务承诺
       </dt>
-      <dd>
+      	<dd>
         <ul>
           <li class="promise_li">正品保证&nbsp&nbsp&nbsp按时发货&nbsp&nbsp&nbsp极速退款</li>
           <br/>
@@ -114,12 +75,8 @@
         <a class="mail" href="mailto:email.from@settings.com">email.from@settings.com</a>
       </div>
     </div>
-   
   </div>
 </footer>
 </body>
-<script type="text/javascript">
-	
-</script>
 </html>
 
