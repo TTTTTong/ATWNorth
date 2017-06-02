@@ -23,6 +23,14 @@
 	<sql:query dataSource="${snapshot}" var="result">
    		select *from goods order by goodsid asc
 	</sql:query>
+	 <sql:setDataSource var="snapshot1" 
+     driver="oracle.jdbc.driver.OracleDriver"
+     url="jdbc:oracle:thin:127.0.0.1:1521:orcl"
+     user="scott"  
+     password="tiger"/>
+	<sql:query dataSource="${snapshot}" var="result1">
+   		select *from siteinfo
+	</sql:query>
  	
  	
  	
@@ -38,13 +46,17 @@
 <footer role="contentinfo" aria-label="Footer">
   <div class="_cont">
     <div class="top">
+    <c:forEach var="row" items="${result1.rows}">
       <div class="right">
+      ${row.copyright}版权所有
       </div>
       <div class="left">
-        <span class="phone">+420 123 456 789</span>
-        <a class="mail" href="mailto:email.from@settings.com">email.from@settings.com</a>
+        <span class="phone">${row.sitephone}</span>
+        <a class="mail" href="mailto:email.from@settings.com">${row.emaile}</a>
       </div>
+       </c:forEach>
     </div>
+    
   </div>
 </footer>
 

@@ -30,24 +30,9 @@
     <button type="submit">搜索</button>
   </form>
 </div>
-<div >
-    <iframe src="goods.jsp" frameborder="0" width=100% height=1000px name="123" scrolling="auto" frameborder="0" ></iframe>
+<div>
+    <iframe src="search.jsp" frameborder="0" width=100% height=1000px name="123" scrolling="auto" frameborder="0" ></iframe>
 </div>
 
-<!--  
-<nav id="nav-2">
-  <a class="link-2" href="#">Home</a>
-  <a class="link-2" href="#">About</a>
-  <a class="link-2" href="#">Contact</a>
-  <a class="link-2" href="#">Shop</a>
-</nav>
-
-<nav id="nav-3">
-  <a class="link-3" href="#">Home</a>
-  <a class="link-3" href="#">About</a>
-  <a class="link-3" href="#">Contact</a>
-  <a class="link-3" href="#">Shop</a>
-</nav>
--->
 </body>
 </html>

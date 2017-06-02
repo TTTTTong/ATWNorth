@@ -7,7 +7,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Add to cart animation</title>
-  <link rel='stylesheet prefetch' href='https://raw.githubusercontent.com/greenwoodents/quickbeam.js/master/demo/css/demo.css'>
   <link rel="stylesheet" href="../css/mngGoodsInfo.css">
   <script src="../../js/jquery.mobile-1.3.2.min.js"></script>
    <script src="../../js/jquery-3.2.0.js"></script>
@@ -34,6 +33,7 @@
    			   简介：<input type="text" name="dscb" value="${goodsInfo.dscb}"required>
    		   		 <button type="submit">修改</button>
     		   </form>
+    		    <a class="link-1" href="${pageContext.request.contextPath}/DeleteGoodsServlet?goodsid=${goodsInfo.goodsid}" >删除</a>
             <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
               <meta itemprop="priceCurrency" content="USD">
               <link itemprop="availability" href="http://schema.org/InStock">

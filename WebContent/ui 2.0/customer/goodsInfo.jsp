@@ -7,8 +7,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Add to cart animation</title>
-  <link rel='stylesheet prefetch' href='https://raw.githubusercontent.com/greenwoodents/quickbeam.js/master/demo/css/demo.css'>
-  <link rel="stylesheet" href="../css/goodsInfo.css">
+   <link rel="stylesheet" href="../css/goodsInfo.css">
   
 </head>
 
@@ -103,23 +102,6 @@
   </div>
 
 </section>
-<footer role="contentinfo" aria-label="Footer">
-  <div class="_cont">
-    <div class="top">
-      <div class="right">
-        
-      </div>
-      <div class="left">
-        <span class="phone">+420 123 456 789</span>
-        <a class="mail" href="mailto:email.from@settings.com">email.from@settings.com</a>
-      </div>
-    </div>
-   
-  </div>
-</footer>
 </body>
-<script type="text/javascript">
-	
-</script>
 </html>
 

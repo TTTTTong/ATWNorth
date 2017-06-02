@@ -29,29 +29,29 @@ public class DeleteGoodsServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-//		
-//		String goodsid = request.getParameter("goodsid");
-//		Connection conn = DBUtils.getConnection();
-//		String sql = "delete from goods where goodsid=?";
-//		try {
-//			PreparedStatement stmt = conn.prepareStatement(sql);
-//			stmt.setString(1, goodsid);
-//			stmt.executeUpdate();
-//		} catch (SQLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}finally {
-//			try {
-//				conn.close();
-//			} catch (SQLException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//		}
-//		response.getWriter().print("<script>alert(\"删除成功!\");</script>");
-//		response.sendRedirect("/ATWNorth/ui 2.0/manager/mng_main.jsp");
-		System.out.println("delete");
+		
+		
+		String goodsid = request.getParameter("goodsid");
+		Connection conn = DBUtils.getConnection();
+		String sql = "delete from goods where goodsid=?";
+		try {
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.setString(1, goodsid);
+			stmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		response.getWriter().print("<script>alert(\"删除成功!\");</script>");
+		response.sendRedirect("/ATWNorth/ui 2.0/manager/goods.jsp");
+		System.out.println("delete"+goodsid);
 	}
 
 	/**

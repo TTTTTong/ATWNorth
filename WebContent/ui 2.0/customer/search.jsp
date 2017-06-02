@@ -20,18 +20,9 @@
      user="scott"  
      password="tiger"/>
 	<sql:query dataSource="${snapshot}" var="result">
-   		select *from goods
+   		select *from goods where goodsname like '%${sname}%'
 	</sql:query>
-	 <sql:setDataSource var="snapshot1" 
-     driver="oracle.jdbc.driver.OracleDriver"
-     url="jdbc:oracle:thin:127.0.0.1:1521:orcl"
-     user="scott"  
-     password="tiger"/>
-	<sql:query dataSource="${snapshot}" var="result1">
-   		select *from siteinfo
-	</sql:query>
- 	
- 	
+	
  	<c:forEach var="row" items="${result.rows}">
  	<figure class="snip1584"><img src="${row.image}"/>
  	 <figcaption>
@@ -40,22 +31,5 @@
  	 </figcaption><a href="${pageContext.request.contextPath }/GetGoodsInfoServlet?goodsid=${row.goodsid}"></a>
 	</figure>
     </c:forEach>
-
-<footer role="contentinfo" aria-label="Footer">
-  <div class="_cont">
-    <div class="top">
-    <c:forEach var="row" items="${result1.rows}">
-      <div class="right">
-      ${row.copyright}版权所有
-      </div>
-      <div class="left">
-        <span class="phone">${row.sitephone}</span>
-        <a class="mail" href="mailto:email.from@settings.com">${row.emaile}</a>
-      </div>
-       </c:forEach>
-    </div>
-    
-  </div>
-</footer>
 </body>
 </html>

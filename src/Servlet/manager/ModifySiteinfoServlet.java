@@ -3,28 +3,23 @@ package Servlet.manager;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import com.sun.prism.Image;
-
-import Bean.GoodsInfo;
 import Util.DBUtils;
-import jdk.nashorn.internal.objects.annotations.Where;
 
 
-public class EditGoodsInfoServlet extends HttpServlet {
-	
+public class ModifySiteinfoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-    public EditGoodsInfoServlet() {
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ModifySiteinfoServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,21 +28,19 @@ public class EditGoodsInfoServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("s");
 		
 		Connection conn = DBUtils.getConnection();
-		String goodsname = request.getParameter("goodsname");
-		String goodsid = request.getParameter("goodsid");
-		int price = Integer.parseInt(request.getParameter("price"));
-		String dscb = request.getParameter("dscb");
-		String sql = "update goods set goodsname=?,price=?,dscb=? where goodsid=?";
+		String sitephone = request.getParameter("phone");
+		String emaile = request.getParameter("emaile");
+		String copyright = request.getParameter("copyright");
+		String sql = "update siteinfo set sitephone=?,emaile=?,copyright=?";
 		PreparedStatement stmt;
-		
 		try {
 			stmt = conn.prepareStatement(sql);
-			stmt.setString(1, goodsname);
-			stmt.setInt(2, price);
-			stmt.setString(3, dscb);
-			stmt.setString(4, goodsid);
+			stmt.setString(1, sitephone);
+			stmt.setString(2, emaile);
+			stmt.setString(3, copyright);
 			stmt.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -58,13 +51,9 @@ public class EditGoodsInfoServlet extends HttpServlet {
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-				System.out.println("修改失败");
 			}
 		}
-		response.getWriter().print("<script>alert(\"修改成功!\");</script>");
-		response.sendRedirect("/ATWNorth/ui 2.0/manager/mng_main.jsp");
-		System.out.println("edit"+goodsname);
-		System.out.println(this.getServletContext().getRealPath("")+"ui 2.0\\img\\");
+		response.getWriter().print("<script>alert(\"Successful operation!\");</script>");
 	}
 
 	/**

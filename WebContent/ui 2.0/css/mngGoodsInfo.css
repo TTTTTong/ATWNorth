@@ -3922,7 +3922,7 @@ footer .socials {
   }
 
   .product-detail .right-col {
-    float: none;
+    float: left;
     margin: 0 auto;
     width: 90%;
   }
@@ -4508,4 +4508,23 @@ footer .socials {
 .form .message a {
   color: #4CAF50;
   text-decoration: none;
+}
+.link-1 {
+  transition: 0.5s ease;
+  background: #5175C0;
+  color: #ffffff;
+  font-size: 20px;
+  text-decoration: none;
+  border-top: 4px solid #5175C0;
+  border-bottom: 4px solid #5175C0;
+  padding: 9px 0;
+  margin: 0 20px;
+}
+.link-1:hover {
+  border-top: 4px solid #ffffff;
+  border-bottom: 4px solid #ffffff;
+  padding: 6px 6px; 
+}
+.hidden {
+    display: none;
 }
