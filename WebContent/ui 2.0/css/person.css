@@ -1,5 +1,6 @@
 body {
 	background: #34495e;
+	TEXT-ALIGN: center;
 font-family: sans-serif;
 }
 
@@ -7,7 +8,9 @@ font-family: sans-serif;
 	position: relative;
 	width: 400px;
 	background: #2c3e50;
+	margin:0 auto;
 	padding: 0;
+	text-align: center;
   box-shadow: 0 0 200px rgba(255, 255, 255, 0.2);
 }
 .add-contact button {
@@ -80,6 +83,8 @@ h1 {
 }
 
 .add-contact {
+	margin:0 auto;
+	TEXT-ALIGN: center;
 	margin-top: 50px;
 }
 

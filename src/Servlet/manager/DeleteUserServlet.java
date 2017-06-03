@@ -1,4 +1,4 @@
-package Servlet;
+package Servlet.manager;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,21 +13,18 @@ import javax.servlet.http.HttpServletResponse;
 import Util.DBUtils;
 
 
-public class DeleteOrderServlet extends HttpServlet {
+public class DeleteUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
 		
-		String orderid = request.getParameter("orderid");
 		Connection conn = DBUtils.getConnection();
+		String username = request.getParameter("username");
 		try {
-			String sql = "delete from shopcar where orderid=?";
-			PreparedStatement stmt = conn.prepareStatement(sql);
-			stmt.setString(1, orderid);
+			String sql = "delete from myuser where username=?";
+			PreparedStatement stmt = conn.prepareStatement(sql);		
+			stmt.setString(1, username );
 			stmt.executeUpdate();
-			
-			//从购物车中删除订单后刷新页面
-			response.sendRedirect("/ATWNorth/ui 2.0/customer/shopcar.jsp");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -40,10 +36,14 @@ public class DeleteOrderServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-	//	response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.getWriter().print("<script>alert(\"Successful operation!\");</script>");
+		System.out.println("拉黑成功"+username );
+		//response.sendRedirect("/ATWNorth/ui 2.0/manager/mng_main.jsp");
 	}
 
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
 		doGet(request, response);
 	}
 

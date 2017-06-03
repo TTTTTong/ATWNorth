@@ -9,6 +9,7 @@ import Util.DBUtils;
 
 public class SearchPriceById {
 	public int SearchPriceByid(String id) throws SQLException {
+		System.out.println("search price");
 		Connection conn = DBUtils.getConnection();
 		String sql = "select price from GOODS where GOODSID=?";
 		PreparedStatement stmt;
@@ -19,6 +20,7 @@ public class SearchPriceById {
 			ResultSet rs = stmt.executeQuery();
 			while(rs.next()){
 				price = rs.getInt(1);
+				System.out.println(price);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

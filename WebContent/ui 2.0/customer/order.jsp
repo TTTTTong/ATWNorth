@@ -1,59 +1,71 @@
-<%@ page import="java.io.*,java.util.*,java.sql.*" pageEncoding="UTF-8"%>
-<%@ page import="javax.servlet.http.*,javax.servlet.*"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-  
-  <body style="text-align:center;">
-  
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>订单列表</title>
+   <script src="../../js/jquery-3.2.1.min.js"></script>
+   <script src="../../js/jquery-3.2.0.js"></script>
+    <script src="../js/cart.js"></script>
+
+  <link rel="stylesheet" href="../css/cart.css">
+</head>
+<body>
+  <h1>订单列表</h1>
   <sql:setDataSource var="snapshot" 
      driver="oracle.jdbc.driver.OracleDriver"
      url="jdbc:oracle:thin:127.0.0.1:1521:orcl"
      user="scott"  
      password="tiger"/>
-
 <sql:query dataSource="${snapshot}" var="result">
    select *from orderlist where username ='${username}' order by orderid desc
 </sql:query>
 
-    <h2>订单列表</h2>
-    <table width="60%" border="1" align="center" style="text-align: center;">
-    	<tr>
-    		<td>用户</td>
-    		<td>手机号</td>
-    		<td>商品</td>
-    		<td>收货地址</td>
-    		<td>订单号</td>
-    		<td>数量</td>
-    		<td>总价</td>
-    		<td>状态</td>
-    		<td>操作</td>
- 
-    	</tr>
-    	<c:forEach var="row" items="${result.rows}">
-		<tr>
-		<td><c:out value="${row.username}"/></td>
-		<td><c:out value="${row.phone}"/></td>
-		<td><c:out value="${row.goods}"/></td>
-		<td><c:out value="${row.address}"/></td>
-		<td><c:out value="${row.orderid}"/></td>
-		<td><c:out value="${row.count}"/></td>
-		<td><c:out value="${row.price}"/></td>
-		<td><c:out value="${row.state}"/></td>
-	    <td>
-		<c:choose>
+
+
+<div class="shopping-cart">
+  <div class="column-labels">
+  <label class="product-price"></label>
+    <label class="product-price1">商品</label>
+    <label class="product-price1">地址</label>
+    <label class="product-price1">订单号</label>
+    <label class="product-price">数量</label>
+    <label class="product-price">总价</label>
+    <label class="product-price">状态</label>
+    <label class="product-price">操作</label>
+  </div>
+  
+<c:forEach var="row" items="${result.rows}">
+  <div class="product">
+     <div class="product-details">
+      <div class="product-title"></div>
+    </div>
+   <div class="product-quantity">${row.username}</div>
+    <div class="product-quantity1">${row.goods}</div>
+    <div class="product-quantity1">${row.address}</div>
+    <div class="product-quantity1">${row.orderid}</div>
+    <div class="product-quantity">${row.count}</div>
+    <div class="product-quantity">${row.price}</div>
+    <div class="product-quantity">${row.state}</div>
+    <div class="product-removal">
+    <c:choose>
 		<c:when test="${row.state == '未发货'}">
-  			<a href="${pageContext.request.contextPath }/ReturnServlet?orderid=${row.orderid}">退货</a>
-  		</c:when>
+  		<button class="remove-product" onclick="window.location.href='${pageContext.request.contextPath }/ReturnServlet?orderid=${row.orderid}'">
+       退货
+      </button>	</c:when>
   		<c:otherwise>
   		无
   	    </c:otherwise>
 		</c:choose>
-		</td>
-	    
-		</tr>
-		</c:forEach> 	
-		</table>
-  </body>
+    </div>
+  </div>
+
+
+</c:forEach> 
+</div>
+
+</body>
 </html>

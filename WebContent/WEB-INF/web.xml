@@ -68,10 +68,15 @@
     <servlet-name>SearchServlet</servlet-name>
     <servlet-class>Servlet.SearchServlet</servlet-class>
   </servlet>
-  <servlet>
-  	<servlet-name>ModifySiteinfoServlet</servlet-name>
-  	<servlet-class>Servlet.manager.ModifySiteinfoServlet</servlet-class>
+    <servlet>
+    <servlet-name>ModifySiteinfoServlet</servlet-name>
+    <servlet-class>Servlet.manager.ModifySiteinfoServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>DeleteUserServlet</servlet-name>
+    <servlet-class>Servlet.manager.DeleteUserServlet</servlet-class>
+  </servlet>
+  
   
   <servlet-mapping>
     <servlet-name>action</servlet-name>
@@ -136,5 +141,9 @@
   <servlet-mapping>
     <servlet-name>ModifySiteinfoServlet</servlet-name>
     <url-pattern>/ModifySiteinfoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteUserServlet</servlet-name>
+    <url-pattern>/DeleteUserServlet</url-pattern>
   </servlet-mapping>
 </web-app>

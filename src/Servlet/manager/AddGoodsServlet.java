@@ -110,7 +110,7 @@ public class AddGoodsServlet extends HttpServlet {
         
 		System.out.println("add  "+good.getGoodsname());
 		response.getWriter().print("<script>alert(\"Successful operation!\");</script>");
-		response.sendRedirect("/ATWNorth/ui 2.0/customer/cus_main.jsp");
+		response.sendRedirect("/ATWNorth/ui 2.0/manager/mng_main.jsp");
 	}
 
 	/**

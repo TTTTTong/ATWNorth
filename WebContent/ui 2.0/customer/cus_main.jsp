@@ -31,7 +31,7 @@
   </form>
 </div>
 <div >
-    <iframe src="goods.jsp" frameborder="0" width=100% height=1000px name="123" scrolling="auto" frameborder="0" ></iframe>
+    <iframe src="goods.jsp" frameborder="0" width=100% height=800px name="123" scrolling="auto" frameborder="0" ></iframe>
 </div>
 
 <!--  

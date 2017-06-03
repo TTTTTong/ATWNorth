@@ -26,6 +26,8 @@ public class LoginActionServlet  extends Action{
 		Connection conn = DBUtils.getConnection();
 		
 		try {
+			System.out.println("login");
+			System.out.println(loginActionForm.getUsername());
 			Statement stmt=conn.createStatement();
 			String sql = "select * from MYUSER where username ='"
 			+loginActionForm.getUsername()+"'";

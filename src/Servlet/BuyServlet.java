@@ -22,7 +22,7 @@ public class BuyServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		System.out.println("buy begin");
 		Connection conn = DBUtils.getConnection();
 		try {
 			HttpSession session = request.getSession();
@@ -33,11 +33,11 @@ public class BuyServlet extends HttpServlet {
 			String goods = new FindGoodsById().FindGoodsById(goodsid); 
 			boolean isExist = new IsGoodsExist().isGoodsExist(goodsid,username);
 			int price = new SearchPriceById().SearchPriceByid(goodsid);
-			
+
 			//如果该商品不在购物车，加入购物车
 			if(isExist == false){
+				
 				int count =1;
-				Random a = new Random(10);
 				String orderid = new DateUtil().getTime() + String.valueOf(count)+String.valueOf((int)(Math.random()*10));
 				String sql = "insert into shopcar values(?,?,?,?,?,?)";
 				PreparedStatement stmt = conn.prepareStatement(sql);
@@ -45,22 +45,23 @@ public class BuyServlet extends HttpServlet {
 				stmt.setString(2, goods);
 				stmt.setString(3, goodsid);
 				stmt.setString(4, orderid);
-				stmt.setLong(5, count);
-				stmt.setLong(6, price);
+				stmt.setInt(5,count);
+				stmt.setInt(6, price);
 				stmt.executeUpdate();
 				
 				//购买完成后跳转到shopcar页面
-				response.sendRedirect("/ATWNorth/ui 1.0/customer/shopcar.jsp");
+				response.sendRedirect("/ATWNorth/ui 2.0/customer/shopcar.jsp");
 			}
 			//如果该商品已经存在购物车中，更改count +1；
 			else{
-				int count1 = new IsGoodsExist().getCount(goodsid)+1;
-				price = price * count1;
-				String sql = "update shopcar set count=?,price=? where goodsid=? ";
+				int count1 = new IsGoodsExist().getCount(goodsid,username)+1;
+				int price2 = count1*price;
+				String sql = "update shopcar set count=?,price=? where goodsid=? and username=?";
 				PreparedStatement stmt = conn.prepareStatement(sql);
 				stmt.setLong(1, count1);
-				stmt.setLong(2, price);
+				stmt.setLong(2, price2);
 				stmt.setString(3, goodsid);
+				stmt.setString(3, username);
 				stmt.executeUpdate();
 				
 				//购买完成后跳转到shopcar页面

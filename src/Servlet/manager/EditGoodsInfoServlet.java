@@ -62,9 +62,8 @@ public class EditGoodsInfoServlet extends HttpServlet {
 			}
 		}
 		response.getWriter().print("<script>alert(\"修改成功!\");</script>");
-		response.sendRedirect("/ATWNorth/ui 2.0/manager/mng_main.jsp");
+		//response.sendRedirect("/ATWNorth/ui 2.0/manager/mng_main.jsp");
 		System.out.println("edit"+goodsname);
-		System.out.println(this.getServletContext().getRealPath("")+"ui 2.0\\img\\");
 	}
 
 	/**

@@ -24,11 +24,12 @@ public class IsGoodsExist {
 				return false;
 	}
  }
-	public int getCount(String id) throws NumberFormatException, SQLException{
+	public int getCount(String id,String username ) throws NumberFormatException, SQLException{
 		Connection conn = DBUtils.getConnection();
-		String sql = "select count from shopcar where goodsid=?";
+		String sql = "select count from shopcar where goodsid=? and username=?";
 		PreparedStatement stmt = conn.prepareStatement(sql);
 		stmt.setString(1, id);
+		stmt.setString(2, username);
 		ResultSet rs = stmt.executeQuery();
 		int i = 0;
 		if (rs.next()) {

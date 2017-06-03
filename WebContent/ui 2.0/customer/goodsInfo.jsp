@@ -54,14 +54,7 @@
               
               <div class="btn-and-quantity-wrap">
                   <div class="btn-and-quantity">
-                 <!--     <div class="spinner">
-                    <span class="btn minus" data-id="2721888517"></span>
-                      <input type="text" id="updates_2721888517" name="quantity" value="1" class="quantity-selector">
-                      <input type="hidden" id="product_id" name="product_id" value="2721888517">
-                      <!-- <span class="q">Qty.</span> 
-                      <span class="btn plus" data-id="2721888517"></span>
-                    </div>
-                 -->  
+                
                     <div id="AddToCart" >
                      <!--   <span id="AddToCartText" >加入购物车</span>  -->
                       <a href="${pageContext.request.contextPath }/BuyServlet?goodsid=${goodsInfo.goodsid}">加入购物车</a>
